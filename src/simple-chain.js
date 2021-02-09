@@ -1,25 +1,40 @@
 const CustomError = require("../extensions/custom-error");
 
 const chainMaker = {
-  getLength() {
-    throw new CustomError('Not implemented');
-    // remove line with error and write your code here
+
+  arr: [],
+
+  getLength() {  //возвращает текущую длину цепочки в виде числа;
+    return this.arr.length;
   },
-  addLink(value) {
-    throw new CustomError('Not implemented');
-    // remove line with error and write your code here
+  addLink(value) { //добавляет в цепочку ссылку, содержащую строковое представление значения;
+    if (value == null) {
+      this.arr.push('null');
+      return this;
+    }
+    if (value === undefined) {
+      this.arr.push(' ');
+      return this;
+    }
+    this.arr.push(value);
+    return this;
   },
-  removeLink(position) {
-    throw new CustomError('Not implemented');
-    // remove line with error and write your code here
+  removeLink(position) { //удаляет звено цепи в указанном положении;
+    if ((position < 1) || (position > this.getLength())) {
+      this.arr = [];
+      throw new Error();
+    }
+    this.arr.splice(position - 1, 1);
+    return this;
   },
-  reverseChain() {
-    throw new CustomError('Not implemented');
-    // remove line with error and write your code here
+  reverseChain() { //в обратном направлении цепь;
+    this.arr.reverse();
+    return this;
   },
-  finishChain() {
-    throw new CustomError('Not implemented');
-    // remove line with error and write your code here
+  finishChain() { //завершает цепочку и возвращает ее. ( GHI )~~( NaN )~~( false )
+    let str = '( ' + this.arr.join(' )~~( ') + ' )';
+    this.arr = [];
+    return str;
   }
 };
 
