@@ -3,7 +3,6 @@ const CustomError = require("../extensions/custom-error");
 const chainMaker = {
 
   arr: [],
-
   getLength() {  //возвращает текущую длину цепочки в виде числа;
     return this.arr.length;
   },

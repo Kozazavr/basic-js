@@ -13,8 +13,8 @@ module.exports = function getSeason(date) {
 
   const arr = ['winter', 'spring', 'summer', 'autumn'];
   let months = date.getMonth() + 1;
-  
   let result;
+  
   if (months < 3 || months == 12) {
     result = arr[0];
   } else if (months < 6) {

@@ -5,12 +5,12 @@ class VigenereCipheringMachine {
     this.boolean = boolean;
   }
 
-
   encrypt(str, key) {
 
-     if(!str || !key) {
+    if(!str || !key) {
       throw new Error();
     }
+
     let arr = [];
     let strForEncrypt = str.toUpperCase();
     let keyUpper = key.toUpperCase();
@@ -25,8 +25,7 @@ class VigenereCipheringMachine {
     if (this.boolean != undefined) {
       return arr.reverse().join('');
     }
-      return arr.join('');
-
+    return arr.join('');
   }    
 
   decrypt(str, key) {
@@ -34,6 +33,7 @@ class VigenereCipheringMachine {
     if(!str || !key) {
       throw new Error();
     }
+
     let arr = [];
     let strForDecrypt = str.toUpperCase();
     let keyUpper = key.toUpperCase();
@@ -48,7 +48,7 @@ class VigenereCipheringMachine {
     if (this.boolean != undefined) {
       return arr.reverse().join('');
     }
-       return arr.join('');
+    return arr.join('');
   }
 }
 

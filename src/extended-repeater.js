@@ -18,10 +18,13 @@ module.exports = function repeater(str, options) {
   if (options.addition === null) {
     options.addition = 'null';
   }
+
   let arrAdd = [];
+
   for (let i = 0; i < options.additionRepeatTimes; i++) {
-      arrAdd.push(options.addition);
+    arrAdd.push(options.addition);
   }
+
   let strAdd = arrAdd.join(options.additionSeparator);
   let str2 = str + strAdd;
   let arrStr = [];
@@ -29,6 +32,5 @@ module.exports = function repeater(str, options) {
     arrStr.push(str2);
   }
    return arrStr.join(options.separator);
-
 };
   
